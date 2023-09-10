@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        D3nesyan's Blog
+    </title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top_div">
+        <h1 style="font-size: 45px; margin-bottom: 0px;">
+            D3nesyan's Blog
+        </h1>
+        <h3 style="margin: 0px;">Android developer....</h3>
+    </div>
+    <div class="links">
+        <nav>
+            <li style="display: inline;"><a style="-webkit-text-fill-color: #ffff;" href="index.html">Home</a></li> &nbsp;
+            <li style="display: inline;"><a style="-webkit-text-fill-color: #ffff;" href="">Abot Me</a></li> &nbsp;
+            <li style="display: inline;"><a style="-webkit-text-fill-color: #ffff;" href="">Archives</a></li> &nbsp;
+            <li style="display: inline;"><a style="-webkit-text-fill-color: #ffff;" href="">Friendly Links</a></li>
+        </nav>
+    </div>
+    <div class="body_div">
+        <div class="t1_div">
+            <h2 style="padding-top: 5px;">ArrowOS Flashing Tutorial for Lavender</h2>
+        </div>
+        <p style="-webkit-text-fill-color: #ffff;">
+            We now have new 4.19 baseline, retrofitted dynamic partitions and erofs support. These make the installation process a bit different compare to normal 4.4/4.19 roms. That's why I specially made this tutorial.
+        </p>
+        <hr>
+        <h3 style="-webkit-text-fill-color: #ffff;">Before flashing</h3>
+        <p style="-webkit-text-fill-color: #ffff;">
+            Make sure you have a PC for following steps. Download latest <strong> <a href="https://developer.android.com/tools/releases/platform-tools">platform_tools</a> </strong> from google official site. Also, download rom package from the <strong> <a href="https://arrowos.net/download">ArrowOS official download site.</a> </strong> Do backups if needed.
+        </p>
+        <hr>
+        <h3>Clean Flash</h3>
+        <h4>Step 1 - </h4>
+        <p>
+            Download TWRP recovery which support erofs and dynamic partitions from HERE and put the recovery image and rom package into the directory of your platform-tools.(Note that recovery haven't support decrypt yet) <br> <br>
+
+            Connect your phone with your PC, using command <br><br>
+
+            <p style="-webkit-text-fill-color: #FFC436; font-weight: 600;"> $ fastboot flash recovery <recovery filename>.img </p> <br>
+
+            to flash the recovery into your phone. After it has done, press Power Button & Volume + to reboot into the recovery.
+
+        </p>
+
+        <h4>Step 2 - </h4>
+        <p>
+            Format data, then enter Advanced Wipe, change Data & Cache partitions file system to F2FS. <br><br>
+
+            DONT FORMAT SYSTEM PARTITION TO F2FS! <br><br>
+
+            Then go to Advanced->ADB Sideload, flash rom with adb sideload command directly. <br><br>
+
+            <p style="-webkit-text-fill-color: #FFC436; font-weight: 600;">$ adb sideload <rom package filename>.zip</p> <br>
+
+            Installation script will change it to dynamic partitions so we don't need to do extra steps here. <br><br>
+            
+            <a style="-webkit-text-fill-color: #40F8FF; font-style: italics;" href="https://twrp.me/faq/ADBSideload.html">In case if you don't know what is adb sideload and how to use it</a> <br><br>
+
+            Or if you have a SD card, you can put the rom package into the SD card and flash it in TWRP directly instead of using adb sideload.
+        </p>
+        
+    </div>
+</body>
+</html>
